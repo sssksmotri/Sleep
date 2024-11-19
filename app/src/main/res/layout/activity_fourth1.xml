@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="12dp"
+    android:paddingStart="12dp"
+    tools:context=".Screens.fourth_1">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="130dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:textColor="@color/white"
+                android:text="Сон"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <!-- Контейнер для диаграммы с числами и текстом -->
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp">
+
+                <!-- Векторное изображение из drawable -->
+                <ImageView
+                    android:id="@+id/diagram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/diagramma" />
+
+                <!-- Число 18 с отступом 60dp от левой части диаграммы -->
+                <TextView
+                    android:id="@+id/number_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18"
+                    android:textSize="17sp"
+                    android:layout_marginStart="60dp"
+                    android:layout_gravity="center_vertical|start" />
+
+                <!-- Число 6 с отступом 60dp от верхней части диаграммы -->
+                <TextView
+                    android:id="@+id/number_6_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textSize="17sp"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="top|center_horizontal" />
+
+                <!-- Число 6 с отступом 60dp от правой части диаграммы -->
+                <TextView
+                    android:id="@+id/number_6_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_gravity="center_vertical|end" />
+
+                <!-- Число 12 с отступом 60dp от нижней части диаграммы -->
+                <TextView
+                    android:id="@+id/number_12_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="60dp"
+                    android:layout_gravity="bottom|center_horizontal" />
+
+                <!-- Текст "8h" в центре диаграммы -->
+                <TextView
+                    android:id="@+id/center_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8h"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <!-- LinearLayout с EditText и TimePicker -->
+            <LinearLayout
+                android:id="@+id/layoutalarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/container"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/edittextalarm"
+                    android:layout_width="match_parent"
+                    android:hint="Будильник сработает"
+                    style="@style/CustomEditTextStyle"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:clickable="true" />
+
+                <TimePicker
+                    android:id="@+id/timePickeralarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:timePickerMode="spinner"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="34dp"
+        android:orientation="horizontal"
+        android:background="@drawable/nav_menu_background"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/moon_active"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/moon_active"
+            android:contentDescription="@drawable/moon_active"/>
+
+        <ImageView
+            android:id="@+id/lotus_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/lotus_default"
+            android:contentDescription="@drawable/lotus_default"/>
+
+        <ImageView
+            android:id="@+id/chart_bold_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/chart_bold_default"
+            android:contentDescription="@drawable/chart_bold_default"/>
+
+        <ImageView
+            android:id="@+id/profile_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/profile_default"
+            android:contentDescription="@drawable/profile_default"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
